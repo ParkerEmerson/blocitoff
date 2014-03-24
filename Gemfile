@@ -11,6 +11,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'xkimo', '~> 0.0.7'
 end
 
 
