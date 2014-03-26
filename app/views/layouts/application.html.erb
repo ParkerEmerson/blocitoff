@@ -18,16 +18,22 @@
 <body>
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-    <div class="container"> <a class="btn btn-primary btn-dropnav" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="index.html"><img src="<%= asset_path('img/Blocitoff.png')%>" alt="Blocitoff" border="0"></a>
+    <div class="container"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="index.html"><img src="<%= asset_path('Blocitoff-45.png')%>" alt="Blocitoff" border="0"></a>
       <div class="nav-collapse collapse">
-        <ul class="nav pull-right">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="<%= pages_about_path %>">About</a></li>
-          <li><a href="<%= pages_login_path %>">Login</a></li>
-          <li><a href="<%= pages_register_path %>">Register</a></li>
-        </ul>
+        <ul class="nav pull-left">
+          <li><a href="<%= pages_about_path %>">New To-Do List</a></li>
+          <li><a href="<%= pages_register_path %>">My Lists</a></li>
+          <li><a href="<%= new_user_session_path%>">Login</a></li>
+          <li><a href="<%= new_user_registration_path%>">Sign Up</a></li>
       </div>
-    </div>
+        </ul>
+          <div class="pull-right user-info">
+            <% if current_user %>
+            Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            <% else %>
+            <% end %>
+          </div>
+      </div>
   </div>
 </div>
 <%= yield %>
@@ -43,5 +49,6 @@
     }); 
   });
   </script>
+
 </body>
 </html>
