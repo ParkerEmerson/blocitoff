@@ -15,12 +15,12 @@ ActiveRecord::Schema.define(:version => 20140327224510) do
 
   create_table "items", :force => true do |t|
     t.text     "body"
-    t.integer  "post_id"
+    t.integer  "todo_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "items", ["post_id"], :name => "index_items_on_post_id"
+  add_index "items", ["todo_id"], :name => "index_items_on_todo_id"
 
   create_table "todos", :force => true do |t|
     t.string   "title"
