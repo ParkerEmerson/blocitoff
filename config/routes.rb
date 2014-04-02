@@ -1,13 +1,6 @@
 Blocitoff::Application.routes.draw do
-  get "todos/index"
 
-  get "todos/show"
-
-  get "todos/new"
-
-  get "todos/edit"
-
-  get "todos/destroy"
+resources :todos
 
   devise_for :users
 
