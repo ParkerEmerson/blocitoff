@@ -1,3 +1,9 @@
-<h1><%= @todo.title %></h1>
-<%= link_to "Edit", edit_todo_path(@todo), class: 'btn btn-mini' %>
-<p><%= @todo.body %></p>
+<div class="span40">
+<table border="1" style="width:300px">
+<tr>
+<td><h1><%= @todo.title %></h1>
+<p><%= @todo.body %></p></td>
+<td><%= link_to "Edit", edit_todo_path(@todo), class: 'btn btn-mini' %></td>
+</tr>
+</div>
+    
